@@ -14,8 +14,10 @@ namespace Shopping.Data
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Country>().HasIndex(c => c.Name).IsUnique();
+            modelBuilder.Entity<Category>().HasIndex(c => c.Name).IsUnique();
         }
 
         public DbSet<Country> Countries { get; set; }
-    }
+		public DbSet<Category> categories { get; set; }
+	}
 }
